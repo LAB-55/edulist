@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= clg.name %></title>
+    <meta name="description" content="<%= meta.template %>" />
+	<meta property="og:image" content="" />
+	<meta property="og:locale" content="en_<%= clg.prefix.toUpperCase() %>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="<%= clg.name %> | EduList.in" />
+	<meta property="og:description" content="<%= meta.template%>" />
+	<meta property="og:url" content="//edulist.in<%= meta.url %>" />
+	<meta property="og:site_name" content="Edulist" />
+	<meta property="article:publisher" content="http://www.facebook.com/Edulist" />
+	<meta property="article:published_time" content="meta.dateTime" />
+	<meta property="article:modified_time" content="meta.dateTime" />
+	<meta property="og:updated_time" content="meta.dateTime" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@edulist.in" />
+	<meta name="twitter:site:id" content="@edulist.in" />
+	<meta name="twitter:title" content="<%= clg.name%> | Edulist.in" />
+	<meta name="twitter:description" content="<%= meta.template%>" />
+
+  </head>
+  <body>
+    <h1><%= clg.name %></h1>
+
+    <p>country : <%= clg.country %></p>
+    <p>
+    state : <%= clg.state %>
+    </p>
+    <p>
+    Zone : <%= clg.zone %>
+    </p>
+  </body>
+</html>
