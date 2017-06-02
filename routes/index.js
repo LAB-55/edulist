@@ -12,22 +12,14 @@ String.prototype.toTitleCase = function() {
   lowers = ['A', 'An', 'The', 'And', 'But', 'Or', 'For', 'Nor', 'As', 'At', 
   'By', 'For', 'From', 'In', 'Into', 'Near', 'Of', 'On', 'Onto', 'To', 'With'];
   for (i = 0, j = lowers.length; i < j; i++)
-    str = str.replace(new RegExp('\\s' + lowers[i] + '\\s', 'g'), 
-      function(txt) {
+      str = str.replace(new RegExp('\\s' + lowers[i] + '\\s', 'g'), function(txt) {
         return txt.toLowerCase();
       });
   return str;
 }
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  
-  // db.collection('quotes').save(req.body, (err, result) => {
-  //   if (err) return console.log(err)
-  //   console.log('saved to database')
-  //   res.redirect('/')
-  // })
-  res.render('index', { title: "Edulist" });
+    res.render('index', { title: "Edulist" });
 });
 
 router.get('/update-sitemap', function(req, res, next) {
@@ -43,9 +35,9 @@ router.get('/college/:cp/:uri', function(req, res, next) {
   var country_prefix = req.params.cp.toLowerCase();
 
   var template = [
-          "Information about {clgName}, a premier college situated at {stateName} in {zone} zone of {country}.",
-          "Information about {clgName}, one of among reputed institutes imparting finest quality education situated at {stateName} in {zone} zone of {country}.",
-          "Information about {clgName}, located in {stateName} state of {zone} zone, {country}.",
+          "Information about {clgName}, a premier college situated at {stateName} state of {country}.",
+          "Information about {clgName}, one of among reputed institutes imparting finest quality education situated at {stateName} state of {country}.",
+          "Information about {clgName}, located in {stateName} state of {country}.",
         ]
   var results = db.collection('colleges').findOne({ "uri" : uri }).then((p) => {
       p.name = p.name.toTitleCase();
@@ -61,7 +53,6 @@ router.get('/college/:cp/:uri', function(req, res, next) {
           meta : {
             template : template[t].replace("{clgName}", p.name)
                                   .replace('{stateName}', p.state)
-                                  .replace('{zone}', p.zone)
                                   .replace('{country}', p.country),
             url : req.url
           } 
@@ -72,6 +63,5 @@ router.get('/college/:cp/:uri', function(req, res, next) {
    });
   
 });
-
 
 module.exports = router;

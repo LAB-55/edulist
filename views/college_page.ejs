@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= clg.name %></title>
+    <meta charset="utf-8">
     <meta name="description" content="<%= meta.template %>" />
 	<meta property="og:image" content="" />
 	<meta property="og:locale" content="en_<%= clg.prefix.toUpperCase() %>" />
@@ -19,17 +20,116 @@
 	<meta name="twitter:site:id" content="@edulist_in" />
 	<meta name="twitter:title" content="<%= clg.name%> | Edulist.in" />
 	<meta name="twitter:description" content="<%= meta.template%>" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link href="/MDB/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/MDB/css/mdb.min.css" rel="stylesheet">
+    <link href="/MDB/css/style.css" rel="stylesheet">
 
-  </head>
+    <script type="text/javascript" src="/MDB/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/MDB/js/tether.min.js"></script>
+    <script type="text/javascript" src="/MDB/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/MDB/js/mdb.min.js"></script>
+</head>
+
   <body>
-    <h1><%= clg.name %></h1>
+  <nav class="navbar navbar-toggleable-md navbar-dark bg-success z-depth-2">
+    <div class="container">
+        <button class="navbar-toggler double-nav navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <strong>Edulist</strong>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">About us</a>	
+                </li>
+                <!-- 
+                <li class="nav-item">
+                    <a class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item dropdown btn-group">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item">Action</a>
+                        <a class="dropdown-item">Another action</a>
+                        <a class="dropdown-item">Something else here</a>
+                    </div>
+                </li> -->
+            </ul>
+            <form class="form-inline waves-effect waves-light">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+    </div>
+</nav>
+<br>
+        <h1 align="center">
+        	<%= clg.name %>        	
+        </h1>
+        <br>
+    <div class="container">
+    	<div class="row">
+			    	
+    			<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header warning-color-dark white-text">
+					    College Details
+					    </div>
+					    <div class="card-block">
+						        
+						    <p> <strong>Address : </strong><%=  clg.address %></p>
+						    <p> <strong>Town/ village/ city : </strong><%=  clg.tvc %></p>
+						    <p> <strong>District : </strong><%=  clg.district %></p>
+						    <p> <strong>State : </strong><%=  clg.state %></p>
+						    <p> <strong>Pincode : </strong><%=  clg.pincode %></p>
+						    <p> <strong>Landline : </strong><%=  clg.landline %></p>
+						    <p> <strong>Website : </strong> <a href="http://<%=  clg.website %>"><%=  clg.website %></a></p>
+						        
+					    </div>
+			    	</div>
+				</div>
+				<div class="col-md-6">
+			    	<div class="card">
+					    <div class="card-header secondary-color-dark white-text">
+					    Head Details
+					    </div>
+					    <div class="card-block">
+				            <p> <strong>Name : </strong><%=  clg.h_name %></p>
+						    <p> <strong>Email : </strong><%=  clg.h_email %></p>
+						    <p> <strong>Landline : </strong><%=  clg.h_landline %></p>
+							<p> <strong>Fax : </strong><%=  clg.h_fax %></p>
+						    <p> <strong>Designation / Type : </strong><%=  clg.h_designation %> / <%=  clg.h_type %></p>
+						    <p> <strong>Joining : </strong><%=  clg.h_joining %></p>
+						    <p> <strong>Experience</strong></p>
+						    <table class="col-md-12">
+						    	<tr><th>Teaching</th> <th>Research</th> <th>Industrial</th></tr>
+						    	<tr>
+						    		
+								    <td><%=  clg.h_te %></p></td>
+								    <td><%=  clg.h_re %></p></td>
+								    <td><%=  clg.h_ie %></p></td>
+						    	</tr>
+						    </table>
 
-    <p>country : <%= clg.country %></p>
-    <p>
-    state : <%= clg.state %>
-    </p>
-    <p>
-    Zone : <%= clg.zone %>
-    </p>
-  </body>
+						    
+						    
+					    </div>
+			    	</div>
+			    </div>
+
+
+			</div>
+        </div>
+
+   
+</body>
 </html>
