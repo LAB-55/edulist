@@ -33,7 +33,7 @@ router.get('/sitemap.xml', function(req, res, next) {
 router.get('/college/:cp/:uri', function(req, res, next) {
   var uri = req.params.uri.toLowerCase();
   var country_prefix = req.params.cp.toLowerCase();
-
+  
   var template = [
           "Information about {clgName}, a premier college situated at {stateName} state of {country}.",
           "Information about {clgName}, one of among reputed institutes imparting finest quality education situated at {stateName} state of {country}.",

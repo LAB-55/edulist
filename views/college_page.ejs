@@ -50,13 +50,8 @@
             <strong>Edulist</strong>
         </a>
         <div class="collapse navbar-collapse" id="navbarNav1">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">About us</a>	
-                </li>
+            <ul  class="navbar-nav ml-auto">
+             
                 <!-- 
                 <li class="nav-item">
                     <a class="nav-link">Pricing</a>
@@ -69,10 +64,17 @@
                         <a class="dropdown-item">Something else here</a>
                     </div>
                 </li> -->
+            <!-- </ul> -->
+            <!-- <ul class=" waves-effect waves-light"> -->
+
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About us</a>    
+                </li>
+                <li class="nav-item active">
+                    <a href="/search" class="nav-link waves-effect waves-light"><i class="fa fa-search"></i> Search</a>
+                </li>
+                <!-- <input class="form-control" type="text" placeholder="Search"> -->
             </ul>
-            <form class="form-inline waves-effect waves-light">
-                <input class="form-control" type="text" placeholder="Search">
-            </form>
         </div>
     </div>
 </nav>
@@ -95,9 +97,11 @@
                     <li>
                         <a class="btn btn-outline-white btn-lg wow fadeInLeft" id="navigate" target="_blank" data-wow-delay="0.2s"><i class="fa fa-location-arrow left"></i>Navigate</a>
                     </li>
+                    <% if( clg.website !== "" ){ %>
                     <li>
                         <a target="_blank" href="http://<%=clg.website%>" class="btn btn-outline-white btn-lg wow fadeInRight" data-wow-delay="0.2s"><i class="fa fa-link left"></i>Website</a>
                     </li>
+                    <% } %>
                 </ul>f
             </div>
             <!--/Container to center the content-->

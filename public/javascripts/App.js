@@ -59,5 +59,5 @@ $(document).ready(function () {
         "background" : "rgba("+ofs+","+ofs+","+ofs+",0.6)"
       })
   });
-  $('.parallax').fire('scroll');
+  // $('.parallax').fire('scroll');
 })
