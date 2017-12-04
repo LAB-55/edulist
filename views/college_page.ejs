@@ -97,11 +97,17 @@
                     <li>
                         <a class="btn btn-outline-white btn-lg wow fadeInLeft" id="navigate" target="_blank" data-wow-delay="0.2s"><i class="fa fa-location-arrow left"></i>Navigate</a>
                     </li>
-                    <% if( clg.website !== "" ){ %>
+                    <% if( clg.website !== "" ){ 
+                    	clg.websites = clg.website.replace(/\s+|\t+/g,"").split(",");
+                    	clg.website = clg.websites[ clg.websites.length - 1] ;
+                    	%>
                     <li>
                         <a target="_blank" href="http://<%=clg.website%>" class="btn btn-outline-white btn-lg wow fadeInRight" data-wow-delay="0.2s"><i class="fa fa-link left"></i>Website</a>
                     </li>
-                    <% } %>
+                    <% }
+                    else{
+	                    clg.websites = [];
+                	} %>
                 </ul>
             </div>
             <!--/Container to center the content-->
@@ -138,7 +144,15 @@
 						    <p> <strong>State : </strong><%=  clg.state %></p>
 						    <p> <strong>Pincode : </strong><%=  clg.pincode %></p>
 						    <p> <strong>Landline : </strong><%=  clg.landline %></p>
-						    <p> <strong>Website : </strong> <a href="http://<%=  clg.website %>"><%=  clg.website %></a></p>
+						   	<%
+						   		for( ix in clg.websites){
+						   		website = clg.websites[ix];
+						   		%>
+						   			<p> <strong>Website : </strong> <a href="http://<%= website %>"><%= website %></a></p>
+						   		<%		
+						   		}
+						   	%>
+						    
 						        
 					    </div>
 			    	</div>
